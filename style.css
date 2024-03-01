@@ -61,3 +61,11 @@ div.elem {
     border-radius: 5px;
     background-color: lightslategray;
 }
+
+.atmeret {
+    width: 100%;
+}
+
+.atmeret:hover {
+    width: 50%;
+}
