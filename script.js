@@ -1,4 +1,4 @@
-window.addEventListener("load", function () {
+$("load", function() {
     elemekElerese1();
     elemekElerese2();
     elemekElerese3();
@@ -9,21 +9,21 @@ window.addEventListener("load", function () {
 });
 
 function elemekElerese1() {
-    const ELEM = document.querySelectorAll("section h2")[0]
-    console.log(ELEM.innerHTML)
+    const ELEM = $("section h2").eq(0)
+    console.log(ELEM.html())
 }
 function elemekElerese2() {
     /**Ide jön az 2.  feladat */
-    const ELEM = document.querySelectorAll("#ide")[0]
-    ELEM.innerHTML = "<p>Jó reggelt!</p>"
+    const ELEM = $("#ide").eq(0)
+    ELEM.html("<p>Jó reggelt!</p>")
 }
 function elemekElerese3() {
     /**Ide jön az 3. feladat */
-    const ELEM = document.querySelectorAll(".ide")[0]
-    ELEM.innerHTML = "<p>Jó reggelt!</p>"
+    const ELEM = $(".ide").eq(0)
+    ELEM.html("<p>Jó reggelt!</p>")
 }
 function elemekElerese4() {
-    const ELEM = document.querySelector("#lista")
+    const ELEM = $("#lista")
     let txt = ""
     txt += "<ul>"
     for (let i = 1; i <= 5; i++) {
@@ -31,28 +31,28 @@ function elemekElerese4() {
         txt += `<li>${szam}</li>`
     }
     txt += "</ul>"
-    ELEM.innerHTML = txt
+    ELEM.html(txt)
 }
 function elemekFormazasa() {
-    const ELEM = document.querySelector("#lista")
-    ELEM.classList.add("formazott")
+    const ELEM = $("#lista")
+    ELEM.addClass("formazott")
 }
 function esemenyKezeles() {
-    const ELEM = document.querySelector("#lista")
-    ELEM.addEventListener("click", function() {
-        const kattELEM = document.getElementsByClassName("kattintasutan")
-        kattELEM[0].innerHTML = ELEM.innerHTML
+    const ELEM = $("#lista")
+    ELEM.on("click", function() {
+        const kattELEM = $(".kattintasutan")
+        kattELEM.html(ELEM.html())
     });
 }
 function esemenyKezeles2() {
-    const ELEM = document.querySelector(".feladat")
-    ELEM.innerHTML = "<button>OK</button>"
-    const ELEM2 = document.querySelectorAll(".feladat button")[0]
-    ELEM2.addEventListener("click", function() {
-        ELEM.innerHTML +=  `<div>
+    const ELEM = $(".feladat")
+    ELEM.html("<button>OK</button>")
+    const ELEM2 = $(".feladat button").eq(0)
+    ELEM2.on("click", function() {
+        ELEM.html(`<div>
                                 <img src="teszt.png" alt="tesztkép" id="esf3">
-                            </div>`
-        const ELEM4 = document.querySelector("#esf3")
-        ELEM4.classList.add("atmeret")
+                            </div>`)
+        const ELEM4 = $("#esf3")
+        ELEM4.addClass("atmeret")
     })
 }
